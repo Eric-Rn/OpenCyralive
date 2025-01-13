@@ -361,3 +361,40 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/OpenCyralive/resources/characters/谢拉 露妮丝/normal.png
+/OpenCyralive/resources/characters/谢拉 露妮丝/CopyrightInfo/Copyright.txt
+/OpenCyralive/resources/characters/谢拉晚礼服/normal.png
+/OpenCyralive/resources/characters/谢拉晚礼服/smile.png
+/OpenCyralive/resources/characters/Clauvio正装/normal.png
+/OpenCyralive/resources/characters/Clauvio正装/CopyrightInfo/Copyright.txt
+/OpenCyralive/resources/characters/Clauvio休闲装/normal.png
+/OpenCyralive/resources/characters/Clauvio休闲装/CopyrightInfo/Copyright.txt
+/OpenCyralive/resources/characters/艾莉可 莲 (彩蛋)/normal.PNG
+/OpenCyralive/resources/images/appicon/谢拉 露妮丝/appicon.ico
+/OpenCyralive/resources/images/trayicon/谢拉 露妮丝/trayicon.ico
+/OpenCyralive/resources/lines/Clauvio休闲装/normal.json
+/OpenCyralive/resources/lines/Clauvio正装/normal.json
+/OpenCyralive/resources/lines/艾莉可 莲 (彩蛋)/normal.json
+/OpenCyralive/resources/lines/谢拉晚礼服/normal.json
+/OpenCyralive/resources/lines/谢拉晚礼服/smile.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/normal.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/activate.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/1.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/10.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/11.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/12.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/2.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/3.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/4.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/5.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/6.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/7.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/8.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/startup/9.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/SpecialThanks/SpecialThanks.txt
+/OpenCyralive/resources/lines/谢拉 露妮丝/hover/afternoon.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/hover/evening.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/hover/morning.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/hover/night.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/hover/noon.json
+/OpenCyralive/resources/lines/谢拉 露妮丝/dragdrop/dragdrop.json
