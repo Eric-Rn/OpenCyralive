@@ -1,0 +1,44 @@
+﻿<Window x:Name="OCWindow" x:Class="OpenCyralive.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mdxam="clr-namespace:MdXaml;assembly=MdXaml"
+        mc:Ignorable="d"
+        Title="OpenCyralive" Height="315" Width="340" MouseUp="Window_MouseUp" LocationChanged="Window_LocationChanged" WindowStyle="None" AllowsTransparency="True" Background="#01FFFFFF" ShowInTaskbar="False" Topmost="True" Activated="Window_Activated" SizeChanged="Window_SizeChanged">
+    <WindowChrome.WindowChrome>
+        <WindowChrome/>
+    </WindowChrome.WindowChrome>
+    <Viewbox x:Name="OCview" Stretch="UniformToFill">
+        <Grid Width="340" Height="315">
+            <Grid.ContextMenu>
+                <ContextMenu x:Name="oc_cm">
+                    <MenuItem x:Name="Cyralive_plugins" Header="{DynamicResource mi_plugins}"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource mi_settings}" x:Name="mi_settings" Click="mi_settings_Click"/>
+                    <MenuItem Header="{DynamicResource mi_characters}" x:Name="mi_characters"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource mi_drag}" x:Name="mi_drag" Click="mi_drag_Click"/>
+                    <MenuItem Header="{DynamicResource mi_minimize_tb}" x:Name="mi_minimize_tb" Click="mi_minimize_tb_Click"/>
+                    <MenuItem Header="{DynamicResource mi_minimize_tray}" x:Name="mi_minimize_tray" Click="mi_minimize_tray_Click"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource mi_exit}" x:Name="mi_exit" Click="mi_exit_Click"/>
+                </ContextMenu>
+            </Grid.ContextMenu>
+            <Grid x:Name="oc_Stage">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="0.7" Color="Black" Direction="330" Opacity="0.5" BlurRadius="2"/>
+                </Grid.Effect>
+                <Image x:Name="oc_Show" HorizontalAlignment="Center" Height="300" Margin="-160,10,0,0" VerticalAlignment="Top" Width="180" MouseLeftButtonDown="oc_Show_MouseLeftButtonDown" MouseLeave="oc_Show_MouseLeave" MouseEnter="oc_Show_MouseEnter" AllowDrop="True" Drop="oc_Show_Drop"/>
+            </Grid>
+            <Grid x:Name="Cierra_hover_text_grid"  Margin="142.5,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Border x:Name="Cierra_hover_text_border" BorderThickness="1" BorderBrush="Black" Width="170" CornerRadius="5" Background="#FFEED6">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="1" Direction="330" Color="Black" Opacity="0.5" BlurRadius="2"/>
+                    </Border.Effect>
+                    <mdxam:MarkdownScrollViewer x:Name="Cierra_hover_text" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" ClickAction="OpenBrowser"/>
+                </Border>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Window>

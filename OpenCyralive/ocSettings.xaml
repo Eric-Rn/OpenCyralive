@@ -1,0 +1,90 @@
+﻿<Window   x:Class="OpenCyralive.ocSettings"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          mc:Ignorable="d"
+        Title="{DynamicResource wnd_oc_settings}" Height="550" Width="850" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="3"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="3"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{DynamicResource txt_personalize}" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <CheckBox Grid.Row="1"  Grid.Column="0" Margin="5,0,0,0" x:Name="oc_hold_position" Content="{DynamicResource oc_hold_position}" Click="oc_hold_position_Click"/>
+                <CheckBox Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" x:Name="oc_hold_size" Content="{DynamicResource oc_hold_size}" Click="oc_hold_size_Click"/>
+                <CheckBox Grid.Row="1" Grid.Column="2" Margin="5,0,0,0" x:Name="oc_topmost" Content="{DynamicResource oc_topmost}" Click="oc_topmost_Click"/>
+                <CheckBox x:Name="oc_transparent_window" Margin="5,0,0,0" Grid.Row="2" Grid.Column="0"  Content="{DynamicResource oc_transparent_window}" Click="oc_transparent_window_Click"/>
+                <CheckBox x:Name="oc_translucent" Margin="5,0,0,0" Grid.Row="2" Grid.Column="1" Content="{DynamicResource oc_translucent}" Click="oc_translucent_Click"/>
+                <CheckBox x:Name="oc_tb_show" Margin="5,0,0,0" Grid.Row="2" Grid.Column="2" Content="{DynamicResource oc_tb_show}" Click="oc_tb_show_Click"/>
+                <TextBlock Text="{DynamicResource txt_language}" Grid.Row="3" VerticalAlignment="Center"/>
+                <ComboBox x:Name="oc_language" Grid.Row="3" Grid.Column="1" Margin="0,2,0,2" DropDownClosed="oc_language_DropDownClosed" />
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="4" Grid.Column="0"/>
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="4" Grid.Column="1"/>
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="4" Grid.Column="2"/>
+                <TextBlock Text="{DynamicResource txt_bubble_bg}" Grid.Row="5" Grid.Column="0"/>
+                <Rectangle x:Name="oc_msg_bg" Grid.Row="5" Grid.Column="1" Margin="0,0,0,2" MouseDown="oc_msg_bg_MouseDown" Stroke="Gray"/>
+                <TextBlock Text="{DynamicResource txt_bubble_fg}" Grid.Row="6" Grid.Column="0"/>
+                <Rectangle x:Name="oc_msg_fg" Grid.Row="6" Grid.Column="1" Margin="0,0,0,2" MouseDown="oc_msg_fg_MouseDown" Stroke="Gray"/>
+                <TextBlock Text="{DynamicResource txt_bubble_brd}" Grid.Row="7" Grid.Column="0"/>
+                <Rectangle x:Name="oc_msg_brd" Grid.Row="7" Grid.Column="1" Margin="0,0,0,2" MouseDown="oc_msg_brd_MouseDown" Stroke="Gray"/>
+                <TextBlock Text="{DynamicResource txt_bubble_font}" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"/>
+                <ComboBox x:Name="oc_msg_font" Margin="0,2,0,2" Grid.Row="8" Grid.Column="1" DropDownClosed="oc_msg_font_DropDownClosed"/>
+                <CheckBox x:Name="oc_msg_font_bold" Margin="5,0,0,0" Grid.Row ="9" Grid.Column="1" Content="{DynamicResource oc_msg_font_bold}" Click="oc_msg_font_bold_Click"/>
+                <CheckBox x:Name="oc_msg_font_italic" Margin="5,0,0,0" Grid.Row="9" Grid.Column="2" Content="{DynamicResource oc_msg_font_italic}" Click="oc_msg_font_italic_Click"/>
+                <TextBlock Text="{DynamicResource txt_bubble_font_size}" Grid.Row="10" Grid.Column="0" VerticalAlignment="Center"/>
+                <ComboBox x:Name="oc_msg_font_size" Margin="0,2,0,2" Grid.Row="10" Grid.Column="1" DropDownClosed="oc_msg_font_size_DropDownClosed"/>
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="11" Grid.Column="0"/>
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="11" Grid.Column="1"/>
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="11" Grid.Column="2"/>
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{DynamicResource txt_hemi}" VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="12" Grid.Column="1" Margin="0,0,0,2" x:Name="oc_hemi">
+                    <ComboBoxItem x:Name="oc_hemi_north" Content="{DynamicResource oc_hemi_north}" PreviewMouseUp="oc_hemi_north_PreviewMouseUp"/>
+                    <ComboBoxItem x:Name="oc_hemi_south" Content="{DynamicResource oc_hemi_south}" PreviewMouseUp="oc_hemi_south_PreviewMouseUp"/>
+                </ComboBox>
+                <Button x:Name="oc_schedule" Grid.Row="13" Grid.Column="0"  Margin="5,0,0,0" Content="{DynamicResource oc_schedule}" Click="oc_schedule_Click"/>
+                <Button x:Name="oc_character_mgmt" Grid.Row="13" Grid.Column="1" Margin="5,0,0,0" Content="{DynamicResource oc_character_mgmt}" Click="oc_character_mgmt_Click"/>
+                <Button x:Name="oc_plugin_mgmt" Grid.Row="13" Grid.Column="2" Margin="5,0,0,0" Content="{DynamicResource oc_plugin_mgmt}" Click="oc_plugin_mgmt_Click"/>
+                <TextBlock Grid.Row="14" Grid.Column="1" Text="{DynamicResource txt_advanced_settings}" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <CheckBox x:Name="oc_desktop_shortcut" Grid.Row="15" Grid.Column="0" Margin="5,0,0,0" Content="{DynamicResource oc_desktop_shortcut}" Click="oc_desktop_shortcut_Click"/>
+                <CheckBox Grid.Row="15" Grid.Column="1" x:Name="oc_startmenu_shortcut" Margin="5,0,0,0" Content="{DynamicResource oc_startmenu_shortcut}" Click="oc_startmenu_shortcut_Click"/>
+                <CheckBox x:Name="oc_autostart" Grid.Row="15" Grid.Column="2" Margin="5,0,0,0" Content="{DynamicResource oc_autostart}" Click="oc_autostart_Click"/>
+                <Button x:Name="oc_restart" Grid.Row="16" Grid.Column="0" Margin="5,0,0,0" Content="{DynamicResource oc_restart}" Click="oc_restart_Click"/>
+                <Button x:Name="oc_config_file" Grid.Row="16" Grid.Column="1" Margin="5,0,0,0" Content="{DynamicResource oc_config_file}" Click="oc_config_file_Click"/>
+                <Button x:Name="oc_reset_default" Grid.Row="16" Grid.Column="2" Margin="5,0,0,0" Content="{DynamicResource oc_reset_default}" Click="oc_reset_default_Click"/>
+                <TextBlock Grid.Row="0" Grid.Column="5" Text="{DynamicResource txt_more_info}"/>
+                <Button x:Name="about" Grid.Row="1" Grid.Column="5" Margin="5,0,0,0" Content="{DynamicResource about}" Click="about_Click"/>
+                <Button x:Name="os_license" Grid.Row="1" Grid.Column="6" Margin="5,0,0,0" Content="{DynamicResource oc_license}" Click="os_license_Click"/>
+                <Button x:Name="oc_moreinfo" Grid.Row="1" Grid.Column="7" Margin="5,0,0,0" Content="{DynamicResource oc_moreinfo}" Click="oc_moreinfo_Click"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>
