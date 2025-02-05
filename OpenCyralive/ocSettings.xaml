@@ -70,20 +70,20 @@
                     <ComboBoxItem x:Name="oc_hemi_north" Content="{DynamicResource oc_hemi_north}" PreviewMouseUp="oc_hemi_north_PreviewMouseUp"/>
                     <ComboBoxItem x:Name="oc_hemi_south" Content="{DynamicResource oc_hemi_south}" PreviewMouseUp="oc_hemi_south_PreviewMouseUp"/>
                 </ComboBox>
-                <Button x:Name="oc_schedule" Grid.Row="13" Grid.Column="0"  Margin="5,0,0,0" Content="{DynamicResource oc_schedule}" Click="oc_schedule_Click"/>
-                <Button x:Name="oc_character_mgmt" Grid.Row="13" Grid.Column="1" Margin="5,0,0,0" Content="{DynamicResource oc_character_mgmt}" Click="oc_character_mgmt_Click"/>
-                <Button x:Name="oc_plugin_mgmt" Grid.Row="13" Grid.Column="2" Margin="5,0,0,0" Content="{DynamicResource oc_plugin_mgmt}" Click="oc_plugin_mgmt_Click"/>
+                <Button x:Name="oc_schedule" Grid.Row="13" Grid.Column="0" Content="{DynamicResource oc_schedule}" Click="oc_schedule_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_character_mgmt" Grid.Row="13" Grid.Column="1" Content="{DynamicResource oc_character_mgmt}" Click="oc_character_mgmt_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_plugin_mgmt" Grid.Row="13" Grid.Column="2" Content="{DynamicResource oc_plugin_mgmt}" Click="oc_plugin_mgmt_Click" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Row="14" Grid.Column="1" Text="{DynamicResource txt_advanced_settings}" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <CheckBox x:Name="oc_desktop_shortcut" Grid.Row="15" Grid.Column="0" Margin="5,0,0,0" Content="{DynamicResource oc_desktop_shortcut}" Click="oc_desktop_shortcut_Click"/>
                 <CheckBox Grid.Row="15" Grid.Column="1" x:Name="oc_startmenu_shortcut" Margin="5,0,0,0" Content="{DynamicResource oc_startmenu_shortcut}" Click="oc_startmenu_shortcut_Click"/>
                 <CheckBox x:Name="oc_autostart" Grid.Row="15" Grid.Column="2" Margin="5,0,0,0" Content="{DynamicResource oc_autostart}" Click="oc_autostart_Click"/>
-                <Button x:Name="oc_restart" Grid.Row="16" Grid.Column="0" Margin="5,0,0,0" Content="{DynamicResource oc_restart}" Click="oc_restart_Click"/>
-                <Button x:Name="oc_config_file" Grid.Row="16" Grid.Column="1" Margin="5,0,0,0" Content="{DynamicResource oc_config_file}" Click="oc_config_file_Click"/>
-                <Button x:Name="oc_reset_default" Grid.Row="16" Grid.Column="2" Margin="5,0,0,0" Content="{DynamicResource oc_reset_default}" Click="oc_reset_default_Click"/>
+                <Button x:Name="oc_restart" Grid.Row="16" Grid.Column="0" Content="{DynamicResource oc_restart}" Click="oc_restart_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_config_file" Grid.Row="16" Grid.Column="1" Content="{DynamicResource oc_config_file}" Click="oc_config_file_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_reset_default" Grid.Row="16" Grid.Column="2" Content="{DynamicResource oc_reset_default}" Click="oc_reset_default_Click" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Row="0" Grid.Column="5" Text="{DynamicResource txt_more_info}"/>
-                <Button x:Name="about" Grid.Row="1" Grid.Column="5" Margin="5,0,0,0" Content="{DynamicResource about}" Click="about_Click"/>
-                <Button x:Name="os_license" Grid.Row="1" Grid.Column="6" Margin="5,0,0,0" Content="{DynamicResource oc_license}" Click="os_license_Click"/>
-                <Button x:Name="oc_moreinfo" Grid.Row="1" Grid.Column="7" Margin="5,0,0,0" Content="{DynamicResource oc_moreinfo}" Click="oc_moreinfo_Click"/>
+                <Button x:Name="about" Grid.Row="1" Grid.Column="5" Content="{DynamicResource about}" Click="about_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="os_license" Grid.Row="1" Grid.Column="6" Content="{DynamicResource oc_license}" Click="os_license_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_moreinfo" Grid.Row="1" Grid.Column="7" Content="{DynamicResource oc_moreinfo}" Click="oc_moreinfo_Click" HorizontalAlignment="Center"/>
             </Grid>
         </ScrollViewer>
     </Grid>
