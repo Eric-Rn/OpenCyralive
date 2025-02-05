@@ -198,14 +198,6 @@ namespace OpenCyralive
                                                 window.Topmost = true;
                                             }
                                             window.Show();
-                                            foreach (Window window1 in Application.Current.Windows)
-                                            {
-                                                if (window.Name.StartsWith("CyraliveWidget"))
-                                                {
-                                                    window.Height = window.Height * (Height / 315);
-                                                    window.Width = window.Width * (Width / 340);
-                                                }
-                                            }
                                         }
                                     }
                                     catch
