@@ -1,0 +1,32 @@
+﻿<Window x:Class="OpenCyralive.ocCharaMgmt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenCyralive"
+        mc:Ignorable="d"
+        Title="{DynamicResource oc_character_mgmt}" Height="450" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="cur_chara" Margin="2,2,2,0" Text="{DynamicResource oc_cur_chara}"/>
+        <Separator Grid.Row="1"/>
+        <StackPanel Grid.Row="2" Margin="2,2,2,0">
+            <TextBlock Text="{DynamicResource oc_all_chara}"/>
+            <ListView x:Name="oc_charas" Height="300"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="delete_chara" Content="{DynamicResource delete_cn}" Click="delete_chara_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="import_chara" Grid.Column="1" Content="{DynamicResource import_chara_cn}" Click="import_chara_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="close_occm_wnd" Grid.Column="2" Content="{DynamicResource close_cn}" Click="close_occm_wnd_Click" HorizontalAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -692,17 +692,7 @@ namespace OpenCyralive
 
         private void oc_character_mgmt_Click(object sender, RoutedEventArgs e)
         {
-            var dialogresult = MessageBox.Show(Application.Current.FindResource("msg_character_mgmt").ToString(), Application.Current.FindResource("msg_info").ToString(), MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (dialogresult == System.Windows.Forms.DialogResult.OK)
-            {
-                openThings(res_folder + "\\characters", "");
-                openThings(res_folder + "\\lines", "");
-                notifyIcon.Dispose();
-                foreach (Window window in Application.Current.Windows)
-                {
-                    window.Close();
-                }
-            }
+            new ocCharaMgmt().Show();
         }
 
         private void oc_language_DropDownClosed(object sender, EventArgs e)

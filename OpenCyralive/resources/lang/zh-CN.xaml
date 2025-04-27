@@ -58,6 +58,15 @@
     <s:String x:Key="rst_msg">您确定要恢复默认设置吗?</s:String>
     <s:String x:Key="msg_info">提示</s:String>
     <s:String x:Key="msg_plugin_mgmt">为避免安装与卸载插件时可能出现的问题，桌宠将关闭，操作完毕后如需继续使用桌宠请再次打开。如需安装插件，请将插件文件夹复制或移动到此目录下。注意：插件文件夹名必须和插件主文件名称一致，如需卸载插件，删除此目录下对应文件夹即可。</s:String>
-    <s:String x:Key="msg_character_mgmt">为避免增删角色时可能出现的问题，桌宠将关闭，操作完毕后如需继续使用桌宠请再次打开。添加角色请将对应的图片素材文件夹复制或移动到characters文件夹下，台词文件夹复制或移动到lines文件夹下。如需删除角色请删除对应的图片素材文件夹和台词文件夹。</s:String>
     <s:String x:Key="schedule_changed">作息时间已修改</s:String>
+    <s:String x:Key="oc_cur_chara">当前角色：</s:String>
+    <s:String x:Key="oc_all_chara">所有角色：</s:String>
+    <s:String x:Key="close_cn">关闭</s:String>
+    <s:String x:Key="delete_cn">删除</s:String>
+    <s:String x:Key="cannot_del_chara">无法删除角色</s:String>
+    <s:String x:Key="cannot_del_chara_info">无法删除角色，所选角色正在使用或未选择要删除的角色。</s:String>
+    <s:String x:Key="success_cn">操作成功</s:String>
+    <s:String x:Key="del_chara_msg">删除成功，按确定重启桌宠。</s:String>
+    <s:String x:Key="import_chara_cn">导入角色</s:String>
+    <s:String x:Key="import_success_cn">导入成功，按确定重启桌宠。</s:String>
 </ResourceDictionary>

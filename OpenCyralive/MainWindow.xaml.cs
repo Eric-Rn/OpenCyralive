@@ -130,7 +130,7 @@ namespace OpenCyralive
                     menuItem.Click += (s, e) =>
                     {
                         character_images.Clear();
-                        foreach (string file_path in Directory.GetFiles(res_folder + "\\characters\\" + character_name[character_name.Length - 1]))
+                        foreach (string file_path in Directory.GetFiles(res_folder + "\\characters\\" + menuItem.Header))
                         {
                             character_images.Add(file_path);
                         }
