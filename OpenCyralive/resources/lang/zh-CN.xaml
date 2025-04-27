@@ -64,7 +64,7 @@
     <s:String x:Key="close_cn">关闭</s:String>
     <s:String x:Key="delete_cn">删除</s:String>
     <s:String x:Key="cannot_del_chara">无法删除角色</s:String>
-    <s:String x:Key="cannot_del_chara_info">无法删除角色，所选角色正在使用或未选择要删除的角色。</s:String>
+    <s:String x:Key="cannot_del_chara_info">无法删除角色，所选角色正在使用。</s:String>
     <s:String x:Key="success_cn">操作成功</s:String>
     <s:String x:Key="del_chara_msg">删除成功，按确定重启桌宠。</s:String>
     <s:String x:Key="import_chara_cn">导入角色</s:String>
