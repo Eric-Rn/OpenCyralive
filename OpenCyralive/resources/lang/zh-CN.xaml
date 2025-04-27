@@ -57,7 +57,7 @@
     <s:String x:Key="rst_warn">警告</s:String>
     <s:String x:Key="rst_msg">您确定要恢复默认设置吗?</s:String>
     <s:String x:Key="msg_info">提示</s:String>
-    <s:String x:Key="msg_plugin_mgmt">为避免安装与卸载插件时可能出现的问题，桌宠将关闭，操作完毕后如需继续使用桌宠请再次打开。如需安装插件，请将插件文件夹复制或移动到此目录下。注意：插件文件夹名必须和插件主文件名称一致，如需卸载插件，删除此目录下对应文件夹即可。</s:String>
+    <s:String x:Key="msg_plugin_mgmt">为避免安装与卸载插件时可能出现的问题，桌宠将关闭，操作完毕后如需继续使用桌宠请再次打开。</s:String>
     <s:String x:Key="schedule_changed">作息时间已修改</s:String>
     <s:String x:Key="oc_cur_chara">当前角色：</s:String>
     <s:String x:Key="oc_all_chara">所有角色：</s:String>

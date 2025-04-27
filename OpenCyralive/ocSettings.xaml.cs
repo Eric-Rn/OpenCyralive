@@ -681,7 +681,7 @@ namespace OpenCyralive
             var dialogResult = MessageBox.Show(Application.Current.FindResource("msg_plugin_mgmt").ToString(), Application.Current.FindResource("msg_info").ToString(), MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialogResult == System.Windows.Forms.DialogResult.OK)
             {
-                openThings(res_folder + "\\plugins", "");
+                openThings(Directory.GetCurrentDirectory() + "\\CyralivePluginMgmt\\OpenCyralivePluginMgmt.exe", "");
                 notifyIcon.Dispose();
                 foreach (Window window in Application.Current.Windows)
                 {
