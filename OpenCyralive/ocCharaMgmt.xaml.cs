@@ -42,7 +42,7 @@ namespace OpenCyralive
             {
                 string[] chara_name = Regex.Split(pathinfo, @"\\");
                 ListViewItem listViewItem = new ListViewItem();
-                listViewItem.Content = chara_name[chara_name.Length - 1];
+                listViewItem.Content = chara_name.Last();
                 oc_charas.Items.Add(listViewItem);
             }
         }
