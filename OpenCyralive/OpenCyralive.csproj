@@ -158,8 +158,8 @@
   <ItemGroup>
     <PackageReference Include="MdXaml" Version="1.27.0" />
     <PackageReference Include="Mime" Version="3.7.0" />
-    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="9.0.4" />
-    <PackageReference Include="System.Text.Json" Version="9.0.4" />
+    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="9.0.6" />
+    <PackageReference Include="System.Text.Json" Version="9.0.6" />
     <PackageReference Include="XamlAnimatedGif" Version="2.3.0" />
   </ItemGroup>
   <ItemGroup>
