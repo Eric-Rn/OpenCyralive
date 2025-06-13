@@ -69,7 +69,7 @@ namespace OpenCyralive
                 character_status_unsanitized = Regex.Split(oc_Show.Source.ToString(), "/");
             }
             string[] character_status = Regex.Split(character_status_unsanitized[character_status_unsanitized.Length - 1], "\\.");
-            return character_status[0];
+            return character_status.First();
         }
 
         string oc_Show_character_name()
@@ -126,7 +126,7 @@ namespace OpenCyralive
                 {
                     character_name = Regex.Split(folder_path, @"\\");
                     MenuItem menuItem = new MenuItem();
-                    menuItem.Header = character_name[character_name.Length - 1];
+                    menuItem.Header = character_name.Last();
                     menuItem.Click += (s, e) =>
                     {
                         character_images.Clear();
