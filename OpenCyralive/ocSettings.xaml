@@ -79,11 +79,11 @@
                 <CheckBox x:Name="oc_autostart" Grid.Row="15" Grid.Column="2" Content="{DynamicResource oc_autostart}" Click="oc_autostart_Click" HorizontalAlignment="Center" Cursor="Hand"/>
                 <Button x:Name="oc_restart" Grid.Row="16" Grid.Column="0" Content="{DynamicResource oc_restart}" Click="oc_restart_Click" HorizontalAlignment="Center"/>
                 <Button x:Name="oc_config_file" Grid.Row="16" Grid.Column="1" Content="{DynamicResource oc_config_file}" Click="oc_config_file_Click" HorizontalAlignment="Center"/>
-                <Button x:Name="oc_reset_default" Grid.Row="16" Grid.Column="2" Content="{DynamicResource oc_reset_default}" Click="oc_reset_default_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_reset_default" Grid.Row="16" Grid.Column="2" Content="{DynamicResource oc_reset_default}" Click="oc_reset_default_Click" HorizontalAlignment="Center" Visibility="Hidden"/>
                 <TextBlock Grid.Row="0" Grid.Column="5" Text="{DynamicResource txt_more_info}"/>
-                <Button x:Name="about" Grid.Row="1" Grid.Column="5" Content="{DynamicResource about}" Click="about_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_about" Grid.Row="1" Grid.Column="5" Content="{DynamicResource about}" Click="oc_about_Click" HorizontalAlignment="Center" Visibility="Hidden"/>
                 <Button x:Name="os_license" Grid.Row="1" Grid.Column="6" Content="{DynamicResource oc_license}" Click="os_license_Click" HorizontalAlignment="Center"/>
-                <Button x:Name="oc_moreinfo" Grid.Row="1" Grid.Column="7" Content="{DynamicResource oc_moreinfo}" Click="oc_moreinfo_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_moreinfo" Grid.Row="1" Grid.Column="7" Content="{DynamicResource oc_moreinfo}" Click="oc_moreinfo_Click" HorizontalAlignment="Center" Visibility="Hidden"/>
             </Grid>
         </ScrollViewer>
     </Grid>

@@ -31,6 +31,8 @@ namespace OpenCyralive
         string[] fontsizes = { "13", "14", "16", "18" };
         string[] langs = Directory.GetFiles(res_folder + "\\lang");
         int selectedLang;
+        Type[] moreinfoTypes;
+        Type[] aboutTypes;
         public ocSettings()
         {
             InitializeComponent();
@@ -182,13 +184,21 @@ namespace OpenCyralive
                     oc_autostart.IsChecked = true;
                 }
             }
-            if (!File.Exists(res_folder + "\\specialplugins\\moreinfo\\moreinfo.dll"))
+            if (File.Exists(res_folder + "\\specialplugins\\about\\about.dll"))
             {
-                oc_moreinfo.Visibility = Visibility.Hidden;
+                oc_about.Visibility = Visibility.Visible;
+                Assembly assembly = Assembly.LoadFrom(Directory.GetCurrentDirectory() + "\\" + res_folder + "\\specialplugins\\about\\about.dll");
+                aboutTypes = assembly.GetExportedTypes();
             }
-            if (!File.Exists(res_folder + "\\specialplugins\\resetdefault\\resetdefault.dll"))
+            if (File.Exists(res_folder + "\\specialplugins\\moreinfo\\moreinfo.dll"))
             {
-                oc_reset_default.Visibility = Visibility.Hidden;
+                oc_moreinfo.Visibility = Visibility.Visible;
+                Assembly assembly = Assembly.LoadFrom(Directory.GetCurrentDirectory() + "\\" + res_folder + "\\specialplugins\\moreinfo\\moreinfo.dll");
+                moreinfoTypes = assembly.GetExportedTypes();
+            }
+            if (File.Exists(res_folder + "\\specialplugins\\resetdefault\\resetdefault.dll"))
+            {
+                oc_reset_default.Visibility = Visibility.Visible;
             }
         }
 
@@ -281,22 +291,14 @@ namespace OpenCyralive
             }
         }
 
-        private void about_Click(object sender, RoutedEventArgs e)
+        private void oc_about_Click(object sender, RoutedEventArgs e)
         {
-            try
+            foreach (Type type in aboutTypes)
             {
-                Assembly assembly = Assembly.LoadFrom(Directory.GetCurrentDirectory() + "\\" + res_folder + "\\specialplugins\\about\\about.dll");
-                foreach (Type type in assembly.GetExportedTypes())
+                if (type.Name == "plugin_base")
                 {
-                    if (type.Name == "plugin_base")
-                    {
-                        type.InvokeMember("pluginStart", BindingFlags.InvokeMethod, null, Activator.CreateInstance(type), null);
-                    }
+                    type.InvokeMember("pluginStart", BindingFlags.InvokeMethod, null, Activator.CreateInstance(type), null);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -645,8 +647,7 @@ namespace OpenCyralive
 
         private void oc_moreinfo_Click(object sender, RoutedEventArgs e)
         {
-            Assembly assembly = Assembly.LoadFrom(Directory.GetCurrentDirectory() + "\\" + res_folder + "\\specialplugins\\moreinfo\\moreinfo.dll");
-            foreach (Type type in assembly.GetExportedTypes())
+            foreach (Type type in moreinfoTypes)
             {
                 if (type.Name == "plugin_base")
                 {
