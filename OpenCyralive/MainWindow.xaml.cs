@@ -134,7 +134,7 @@ namespace OpenCyralive
                         {
                             character_images.Add(file_path);
                         }
-                        character_change(Directory.GetFiles(folder_path, "normal.*")[0]);
+                        character_change(Directory.GetFiles(folder_path, "normal.*").First());
                         write_config_file(res_folder + "\\config\\config.json", "Character", oc_Show_character_name());
                         if (File.Exists(res_folder + "\\images\\trayicon\\" + read_config_file(res_folder + "\\config\\config.json", "Character") + "\\trayicon.ico"))
                         {
