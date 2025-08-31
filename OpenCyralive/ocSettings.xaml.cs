@@ -716,9 +716,9 @@ namespace OpenCyralive
                 {
                     string[] strings = Regex.Split(langs[oc_language.SelectedIndex], @"\\");
                     string[] strings1 = Regex.Split(strings.Last(), "\\.");
-                    write_config_file(res_folder + "\\config\\config.json", "Culture", strings1[0]);
+                    write_config_file(res_folder + "\\config\\config.json", "Culture", strings1.First());
                     FileStream fileStream = new FileStream(langs[selectedLang].ToString(), FileMode.Open);
-                    FileStream fileStream1 = new FileStream(res_folder + "\\lang\\" + strings1[0] + ".xaml", FileMode.Open);
+                    FileStream fileStream1 = new FileStream(res_folder + "\\lang\\" + strings1.First() + ".xaml", FileMode.Open);
                     Application.Current.Resources.MergedDictionaries.Remove((ResourceDictionary)XamlReader.Load(fileStream));
                     Application.Current.Resources.MergedDictionaries.Add((ResourceDictionary)XamlReader.Load(fileStream1));
                     fileStream.Close();

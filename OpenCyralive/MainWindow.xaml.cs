@@ -220,11 +220,11 @@ namespace OpenCyralive
                 ocConfig = JsonNode.Parse(File.ReadAllText(res_folder + "\\config\\config.json"));
                 if (ocConfig["Character"].ToString() == null || ocConfig["Character"].ToString() == "")
                 {
-                    character_change(Directory.GetFiles(Directory.GetDirectories(res_folder + "\\characters")[0], "normal.*")[0]);
+                    character_change(Directory.GetFiles(Directory.GetDirectories(res_folder + "\\characters").First(), "normal.*").First());
                 }
                 else
                 {
-                    character_change(Directory.GetFiles(res_folder + "\\characters\\" + ocConfig["Character"].ToString(), "normal.*")[0]);
+                    character_change(Directory.GetFiles(res_folder + "\\characters\\" + ocConfig["Character"].ToString(), "normal.*").First());
                 }
                 if (ocConfig["Character"].ToString() != "" && File.Exists(res_folder + "\\images\\trayicon\\" + ocConfig["Character"] + "\\trayicon.ico"))
                 {
@@ -629,7 +629,7 @@ namespace OpenCyralive
             {
                 try
                 {
-                    string[] first_split = Regex.Split(fileDrops[0], @"\\");
+                    string[] first_split = Regex.Split(fileDrops.First(), @"\\");
                     string[] second_split = Regex.Split(first_split.Last(), "\\.");
                     Cierra_hover_text.Markdown = get_message(res_folder + "\\lines\\" + oc_Show_character_name() + "\\dragdrop\\" + second_split.Last() + ".json");
                 }

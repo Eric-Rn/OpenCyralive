@@ -10,6 +10,7 @@ using MdXaml;
 using MessageBox = System.Windows.Forms.MessageBox;
 using System.Windows.Media;
 using System.Security.Cryptography;
+using System.Linq;
 
 namespace OpenCyralive
 {
@@ -23,7 +24,7 @@ namespace OpenCyralive
         public static bool chara_hold_position;
         public static string[] get_size;
         public static int month;
-        public static string[] strings = Regex.Split(Directory.GetDirectories(res_folder + "\\characters")[0], @"\\");
+        public static string[] strings = Regex.Split(Directory.GetDirectories(res_folder + "\\characters").First(), @"\\");
         public static Markdown markdown = new Markdown();
         public static FontFamily fontFamily;
         public static double fontSize = 0;
