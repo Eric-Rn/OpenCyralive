@@ -68,7 +68,7 @@ namespace OpenCyralive
             {
                 character_status_unsanitized = Regex.Split(oc_Show.Source.ToString(), "/");
             }
-            string[] character_status = Regex.Split(character_status_unsanitized[character_status_unsanitized.Length - 1], "\\.");
+            string[] character_status = Regex.Split(character_status_unsanitized.Last(), "\\.");
             return character_status.First();
         }
 
@@ -230,9 +230,9 @@ namespace OpenCyralive
                 {
                     notifyIcon.Icon = new Icon(res_folder + "\\images\\trayicon\\" + ocConfig["Character"].ToString() + "\\trayicon.ico");
                 }
-                else if (File.Exists(res_folder + "\\images\\trayicon\\" + strings[strings.Length - 1] + "\\trayicon.ico"))
+                else if (File.Exists(res_folder + "\\images\\trayicon\\" + strings.Last() + "\\trayicon.ico"))
                 {
-                    notifyIcon.Icon = new Icon(res_folder + "\\images\\trayicon\\" + strings[strings.Length - 1] + "\\trayicon.ico");
+                    notifyIcon.Icon = new Icon(res_folder + "\\images\\trayicon\\" + strings.Last() + "\\trayicon.ico");
                 }
                 else
                 {
@@ -242,9 +242,9 @@ namespace OpenCyralive
                 {
                     Icon = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + ocConfig["Character"].ToString() + "\\appicon.ico", UriKind.RelativeOrAbsolute));
                 }
-                else if (File.Exists(res_folder + "\\images\\appicon\\" + strings[strings.Length - 1] + "\\appicon.ico"))
+                else if (File.Exists(res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico"))
                 {
-                    Icon = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + strings[strings.Length - 1] + "\\appicon.ico", UriKind.RelativeOrAbsolute));
+                    Icon = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico", UriKind.RelativeOrAbsolute));
                 }
                 else
                 {
@@ -630,8 +630,8 @@ namespace OpenCyralive
                 try
                 {
                     string[] first_split = Regex.Split(fileDrops[0], @"\\");
-                    string[] second_split = Regex.Split(first_split[first_split.Length - 1], "\\.");
-                    Cierra_hover_text.Markdown = get_message(res_folder + "\\lines\\" + oc_Show_character_name() + "\\dragdrop\\" + second_split[second_split.Length - 1] + ".json");
+                    string[] second_split = Regex.Split(first_split.Last(), "\\.");
+                    Cierra_hover_text.Markdown = get_message(res_folder + "\\lines\\" + oc_Show_character_name() + "\\dragdrop\\" + second_split.Last() + ".json");
                 }
                 catch
                 {
