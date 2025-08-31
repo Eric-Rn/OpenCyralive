@@ -19,6 +19,7 @@ using File = System.IO.File;
 using MessageBox = System.Windows.Forms.MessageBox;
 using System.Globalization;
 using System.Windows.Markup;
+using System.Linq;
 
 namespace OpenCyralive
 {
@@ -222,9 +223,9 @@ namespace OpenCyralive
                 {
                     Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + read_config_file(res_folder + "\\config\\config.json", "Character") + "\\appicon.ico";
                 }
-                else if (File.Exists(res_folder + "\\images\\appicon\\" + strings[strings.Length - 1] + "\\appicon.ico"))
+                else if (File.Exists(res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico"))
                 {
-                    Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + strings[strings.Length - 1] + "\\appicon.ico";
+                    Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico";
                 }
                 else
                 {
@@ -238,9 +239,9 @@ namespace OpenCyralive
                 {
                     Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + read_config_file(res_folder + "\\config\\config.json", "Character") + "\\appicon.ico";
                 }
-                else if (File.Exists(res_folder + "\\images\\appicon\\" + strings[strings.Length - 1] + "\\appicon.ico"))
+                else if (File.Exists(res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico"))
                 {
-                    Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + strings[strings.Length - 1] + "\\appicon.ico";
+                    Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico";
                 }
                 else
                 {
@@ -714,7 +715,7 @@ namespace OpenCyralive
                 else
                 {
                     string[] strings = Regex.Split(langs[oc_language.SelectedIndex], @"\\");
-                    string[] strings1 = Regex.Split(strings[strings.Length - 1], "\\.");
+                    string[] strings1 = Regex.Split(strings.Last(), "\\.");
                     write_config_file(res_folder + "\\config\\config.json", "Culture", strings1[0]);
                     FileStream fileStream = new FileStream(langs[selectedLang].ToString(), FileMode.Open);
                     FileStream fileStream1 = new FileStream(res_folder + "\\lang\\" + strings1[0] + ".xaml", FileMode.Open);

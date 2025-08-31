@@ -83,7 +83,7 @@ namespace OpenCyralive
                 {
                     string[] oc_import_chara_path = Regex.Split(openFileDialog.FileName, "\\\\");
                     ZipFile.ExtractToDirectory(openFileDialog.FileName, res_folder, true);
-                    MessageBox.Show(Regex.Replace(oc_import_chara_path[oc_import_chara_path.Length - 1], "\\.zip", "") + " " + Application.Current.FindResource("import_success_cn").ToString(), Application.Current.FindResource("success_cn").ToString(), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                    MessageBox.Show(Regex.Replace(oc_import_chara_path.Last(), "\\.zip", "") + " " + Application.Current.FindResource("import_success_cn").ToString(), Application.Current.FindResource("success_cn").ToString(), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
                     notifyIcon.Dispose();
                     Application.Current.Shutdown();
                     openThings(Assembly.GetExecutingAssembly().GetName().Name + ".exe", "");
