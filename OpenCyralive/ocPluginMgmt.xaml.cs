@@ -48,7 +48,6 @@ namespace OpenCyralive
                 var dialogResult = MessageBox.Show(Application.Current.FindResource("msg_plugin_mgmt").ToString(), Application.Current.FindResource("msg_info").ToString(), MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dialogResult == System.Windows.Forms.DialogResult.OK)
                 {
-                    openThings(res_folder + "\\plugins", "");
                     notifyIcon.Dispose();
                     openThings("explorer.exe", "/select," + Directory.GetCurrentDirectory() + "\\" + pluginDirs[oc_plugins.SelectedIndex]);
                     foreach (Window window in Application.Current.Windows)
