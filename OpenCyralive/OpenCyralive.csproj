@@ -7,7 +7,7 @@
     <UseWindowsForms>True</UseWindowsForms>
     <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
     <Authors>Eric Ren, BSU Solutions</Authors>
-    <Version>5.2</Version>
+    <Version>5.3</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>none</DebugType>
