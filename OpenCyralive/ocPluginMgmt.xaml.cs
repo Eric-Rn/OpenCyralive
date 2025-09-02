@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -10,6 +11,7 @@ using static OpenCyralive.GlobalFunction;
 using Application = System.Windows.Application;
 using ListViewItem = System.Windows.Controls.ListViewItem;
 using MessageBox = System.Windows.Forms.MessageBox;
+using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 
 namespace OpenCyralive
 {
@@ -61,6 +63,28 @@ namespace OpenCyralive
         private void oc_plugin_cancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void oc_plugin_install_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.DefaultExt = ".zip";
+            openFileDialog.Filter = "Zip files (*.zip)|*.zip";
+            if (openFileDialog.ShowDialog().Value)
+            {
+                try
+                {
+                    ZipFile.ExtractToDirectory(openFileDialog.FileName, res_folder + "\\plugins", true);
+                    MessageBox.Show("插件安装成功，桌宠重启后生效", "插件安装成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    notifyIcon.Dispose();
+                    Application.Current.Shutdown();
+                    openThings(Assembly.GetExecutingAssembly().GetName().Name + ".exe", "");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

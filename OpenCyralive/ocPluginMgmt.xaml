@@ -12,7 +12,14 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Margin="2,2,2,0" Text="插件："/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="2,2,2,0" Text="插件："/>
+            <Button x:Name="oc_plugin_install" Grid.Column="1" Content="安装插件" Click="oc_plugin_install_Click"/>
+        </Grid>
         <Separator Grid.Row="1"/>
         <StackPanel Grid.Row="2">
             <ListView x:Name="oc_plugins" Height="300"/>
