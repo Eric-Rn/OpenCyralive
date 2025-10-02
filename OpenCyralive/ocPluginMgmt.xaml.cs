@@ -29,7 +29,7 @@ namespace OpenCyralive
                 foreach (string folder_path in Directory.GetDirectories(res_folder + "\\plugins"))
                 {
                     pluginDirs.Add(folder_path);
-                    Assembly assembly = Assembly.LoadFile(Directory.GetCurrentDirectory() + "\\" + folder_path + "\\" + Regex.Split(folder_path, @"\\").Last() + ".dll");
+                    Assembly assembly = Assembly.LoadFile(Directory.GetCurrentDirectory() + "\\" + folder_path + "\\" + Path.GetFileName(folder_path) + ".dll");
                     foreach (Type type in assembly.GetExportedTypes())
                     {
                         if (type.Name == "plugin_base")

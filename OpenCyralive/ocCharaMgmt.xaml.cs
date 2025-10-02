@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using XamlAnimatedGif;
 using static OpenCyralive.GlobalFunction;
 using MessageBox = System.Windows.Forms.MessageBox;
 
@@ -25,16 +26,20 @@ namespace OpenCyralive
             {
                 if (window.GetType() == typeof(MainWindow))
                 {
-                    string[] chara_name = Regex.Split((window as MainWindow).oc_Show.Source.ToString(), @"\/");
-                    cur_chara_name = chara_name[chara_name.Length - 2];
-                    cur_chara.Text = cur_chara.Text + cur_chara_name;
+                    if (AnimationBehavior.GetSourceUri((window as MainWindow).oc_Show) == null)
+                    {
+                        cur_chara.Text = cur_chara.Text + Path.GetFileName(Path.GetDirectoryName(new Uri((window as MainWindow).oc_Show.Source.ToString()).LocalPath));
+                    }
+                    else
+                    {
+                        cur_chara.Text = cur_chara.Text + Path.GetFileName(Path.GetDirectoryName(new Uri(AnimationBehavior.GetSourceUri((window as MainWindow).oc_Show).ToString()).LocalPath));
+                    }
                 }
             }
             foreach (string pathinfo in Directory.GetDirectories(res_folder + "\\characters"))
             {
-                string[] chara_name = Regex.Split(pathinfo, @"\\");
                 ListViewItem listViewItem = new ListViewItem();
-                listViewItem.Content = chara_name.Last();
+                listViewItem.Content = Path.GetFileName(pathinfo);
                 oc_charas.Items.Add(listViewItem);
             }
         }
@@ -81,9 +86,8 @@ namespace OpenCyralive
             {
                 try
                 {
-                    string[] oc_import_chara_path = Regex.Split(openFileDialog.FileName, "\\\\");
                     ZipFile.ExtractToDirectory(openFileDialog.FileName, res_folder, true);
-                    MessageBox.Show(Regex.Replace(oc_import_chara_path.Last(), "\\.zip", "") + " " + Application.Current.FindResource("import_success_cn").ToString(), Application.Current.FindResource("success_cn").ToString(), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                    MessageBox.Show(Path.GetFileNameWithoutExtension(openFileDialog.FileName) + " " + Application.Current.FindResource("import_success_cn").ToString(), Application.Current.FindResource("success_cn").ToString(), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
                     notifyIcon.Dispose();
                     Application.Current.Shutdown();
                     openThings(Assembly.GetExecutingAssembly().GetName().Name + ".exe", "");

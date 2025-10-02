@@ -38,7 +38,6 @@ namespace OpenCyralive
     public partial class MainWindow : Window
     {
         List<string> character_images = new List<string>();
-        string[] character_name;
         bool hover_text_override;
         bool fullyStarted = false;
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
@@ -59,31 +58,26 @@ namespace OpenCyralive
 
         string character_status()
         {
-            string[] character_status_unsanitized;
             if (AnimationBehavior.GetSourceUri(oc_Show) != null)
             {
-                character_status_unsanitized = Regex.Split(AnimationBehavior.GetSourceUri(oc_Show).ToString(), "/");
+                return Path.GetFileNameWithoutExtension(new Uri(AnimationBehavior.GetSourceUri(oc_Show).ToString()).LocalPath);
             }
             else
             {
-                character_status_unsanitized = Regex.Split(oc_Show.Source.ToString(), "/");
+                return Path.GetFileNameWithoutExtension(new Uri(oc_Show.Source.ToString()).LocalPath);
             }
-            string[] character_status = Regex.Split(character_status_unsanitized.Last(), "\\.");
-            return character_status.First();
         }
 
         string oc_Show_character_name()
         {
-            string[] oc_Show_character_name;
             if (AnimationBehavior.GetSourceUri(oc_Show) == null)
             {
-                oc_Show_character_name = Regex.Split(oc_Show.Source.ToString(), "/");
+                return Path.GetFileName(Path.GetDirectoryName(new Uri(oc_Show.Source.ToString()).LocalPath));
             }
             else
             {
-                oc_Show_character_name = Regex.Split(AnimationBehavior.GetSourceUri(oc_Show).ToString(), "/");
+                return Path.GetFileName(Path.GetDirectoryName(new Uri(AnimationBehavior.GetSourceUri(oc_Show).ToString()).LocalPath));
             }
-            return oc_Show_character_name[oc_Show_character_name.Length - 2];
         }
         public MainWindow()
         {
@@ -124,9 +118,8 @@ namespace OpenCyralive
             {
                 foreach (string folder_path in Directory.GetDirectories(res_folder + "\\characters"))
                 {
-                    character_name = Regex.Split(folder_path, @"\\");
                     MenuItem menuItem = new MenuItem();
-                    menuItem.Header = character_name.Last();
+                    menuItem.Header = Path.GetFileName(folder_path);
                     menuItem.Click += (s, e) =>
                     {
                         character_images.Clear();
@@ -159,7 +152,7 @@ namespace OpenCyralive
                 {
                     foreach (string folder_path in Directory.GetDirectories(res_folder + "\\plugins"))
                     {
-                        Assembly assembly = Assembly.LoadFrom(folder_path + "\\" + Regex.Split(folder_path, @"\\").Last() + ".dll");
+                        Assembly assembly = Assembly.LoadFrom(folder_path + "\\" + Path.GetFileName(folder_path) + ".dll");
                         MenuItem menuItem = new MenuItem();
                         foreach (Type type in assembly.GetExportedTypes())
                         {
@@ -629,9 +622,7 @@ namespace OpenCyralive
             {
                 try
                 {
-                    string[] first_split = Regex.Split(fileDrops.First(), @"\\");
-                    string[] second_split = Regex.Split(first_split.Last(), "\\.");
-                    Cierra_hover_text.Markdown = get_message(res_folder + "\\lines\\" + oc_Show_character_name() + "\\dragdrop\\" + second_split.Last() + ".json");
+                    Cierra_hover_text.Markdown = get_message(res_folder + "\\lines\\" + oc_Show_character_name() + "\\dragdrop\\" + Path.GetExtension(fileDrops.First()).TrimStart('.') + ".json");
                 }
                 catch
                 {
