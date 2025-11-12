@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Forms;
@@ -29,6 +28,7 @@ using System.Globalization;
 using System.Windows.Markup;
 using HeyRed.Mime;
 using XamlAnimatedGif;
+using MenuItem = System.Windows.Controls.MenuItem;
 
 namespace OpenCyralive
 {
