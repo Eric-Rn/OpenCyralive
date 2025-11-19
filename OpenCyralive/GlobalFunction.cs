@@ -11,6 +11,8 @@ using MessageBox = System.Windows.Forms.MessageBox;
 using System.Windows.Media;
 using System.Security.Cryptography;
 using System.Linq;
+using System.Runtime.Loader;
+using System.Reflection;
 
 namespace OpenCyralive
 {
@@ -100,6 +102,11 @@ namespace OpenCyralive
             {
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public class ocassemblylc : AssemblyLoadContext
+        {
+            
         }
     }
 }

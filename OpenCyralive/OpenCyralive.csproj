@@ -7,7 +7,7 @@
     <UseWindowsForms>True</UseWindowsForms>
     <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
     <Authors>Eric Ren, BSU Solutions</Authors>
-    <Version>5.6</Version>
+    <Version>5.7</Version>
 	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

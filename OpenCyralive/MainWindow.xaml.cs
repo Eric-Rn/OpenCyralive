@@ -29,6 +29,7 @@ using System.Windows.Markup;
 using HeyRed.Mime;
 using XamlAnimatedGif;
 using MenuItem = System.Windows.Controls.MenuItem;
+using System.Runtime.Loader;
 
 namespace OpenCyralive
 {
@@ -152,7 +153,17 @@ namespace OpenCyralive
                 {
                     foreach (string folder_path in Directory.GetDirectories(res_folder + "\\plugins"))
                     {
-                        Assembly assembly = Assembly.LoadFrom(folder_path + "\\" + Path.GetFileName(folder_path) + ".dll");
+                        //Assembly assembly = Assembly.LoadFrom(folder_path + "\\" + Path.GetFileName(folder_path) + ".dll");
+                        AssemblyLoadContext assemblyLoadContext = new ocassemblylc();
+                        assemblyLoadContext.Resolving += (context, assemblyName) =>
+                        {
+                            if (File.Exists(Directory.GetCurrentDirectory() + "\\" + folder_path + "\\" + assemblyName.Name + ".dll"))
+                            {
+                                return context.LoadFromStream(new MemoryStream(File.ReadAllBytes(Directory.GetCurrentDirectory() + "\\" + folder_path + "\\" + assemblyName.Name + ".dll")));
+                            }
+                            return null;
+                        };
+                        Assembly assembly = assemblyLoadContext.LoadFromStream(new MemoryStream(File.ReadAllBytes(Directory.GetCurrentDirectory() + "\\" + folder_path + "\\" + Path.GetFileName(folder_path) + ".dll")));
                         MenuItem menuItem = new MenuItem();
                         foreach (Type type in assembly.GetExportedTypes())
                         {
