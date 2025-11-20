@@ -30,14 +30,15 @@ namespace OpenCyralive
                 foreach (string folder_path in Directory.GetDirectories(res_folder + "\\plugins"))
                 {
                     pluginDirs.Add(folder_path);
-                    AssemblyLoadContext assemblyLoadContext = new ocassemblylc();
-                    Assembly assembly = assemblyLoadContext.LoadFromStream(new MemoryStream(File.ReadAllBytes(Directory.GetCurrentDirectory() + "\\" + folder_path + "\\" + Path.GetFileName(folder_path) + ".dll")));
-                    foreach (Type type in assembly.GetExportedTypes())
+                }
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.GetType() == typeof(MainWindow))
                     {
-                        if (type.Name == "plugin_base")
+                        foreach (System.Windows.Controls.MenuItem menuItem in (window as MainWindow).Cyralive_plugins.Items)
                         {
                             ListViewItem listViewItem = new ListViewItem();
-                            listViewItem.Content = type.InvokeMember("pluginName", BindingFlags.InvokeMethod, null, Activator.CreateInstance(type), null);
+                            listViewItem.Content = menuItem.Header;
                             oc_plugins.Items.Add(listViewItem);
                         }
                     }
