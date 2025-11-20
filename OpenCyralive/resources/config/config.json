@@ -1,8 +1,8 @@
 {
-  "Topmost": "Yes",
+  "Topmost": true,
   "Taskbar": "No",
-  "TransparentWindow": "No",
-  "Translucent": "No",
+  "TransparentWindow": false,
+  "Translucent": false,
   "WindowXY": "",
   "WindowSize": "",
   "Character": "",

@@ -47,15 +47,15 @@ namespace OpenCyralive
             {
                 oc_hold_size.IsChecked = true;
             }
-            if (ocConfig["Topmost"].ToString() != "No")
+            if ((bool)ocConfig["Topmost"])
             {
                 oc_topmost.IsChecked = true;
             }
-            if (ocConfig["TransparentWindow"].ToString() == "Yes")
+            if ((bool)ocConfig["TransparentWindow"])
             {
                 oc_transparent_window.IsChecked = true;
             }
-            if (ocConfig["Translucent"].ToString() == "Yes")
+            if ((bool)ocConfig["Translucent"])
             {
                 oc_translucent.IsChecked = true;
             }
@@ -283,12 +283,12 @@ namespace OpenCyralive
             if (Application.Current.MainWindow.Topmost)
             {
                 Application.Current.MainWindow.Topmost = false;
-                write_config_file(res_folder + "\\config\\config.json", "Topmost", "No");
+                write_config_file(res_folder + "\\config\\config.json", "Topmost", false);
             }
             else
             {
                 Application.Current.MainWindow.Topmost = true;
-                write_config_file(res_folder + "\\config\\config.json", "Topmost", "Yes");
+                write_config_file(res_folder + "\\config\\config.json", "Topmost", true);
             }
         }
 
@@ -313,36 +313,42 @@ namespace OpenCyralive
             if (Application.Current.MainWindow.Background == Brushes.Transparent)
             {
                 Application.Current.MainWindow.Background = (Brush)new BrushConverter().ConvertFromString("#01FFFFFF");
-                write_config_file(res_folder + "\\config\\config.json", "TransparentWindow", "No");
+                write_config_file(res_folder + "\\config\\config.json", "TransparentWindow", false);
             }
             else
             {
                 Application.Current.MainWindow.Background = Brushes.Transparent;
-                write_config_file(res_folder + "\\config\\config.json", "TransparentWindow", "Yes");
+                write_config_file(res_folder + "\\config\\config.json", "TransparentWindow", true);
             }
         }
 
         private void oc_translucent_Click(object sender, RoutedEventArgs e)
         {
-            if (read_config_file(res_folder + "\\config\\config.json", "Translucent") == "Yes")
+            foreach (Window window1 in Application.Current.Windows)
             {
-                write_config_file(res_folder + "\\config\\config.json", "Translucent", "No");
-                foreach (Window window in Application.Current.Windows)
+                if (window1.GetType() == typeof(MainWindow))
                 {
-                    if (window.GetType() == typeof(MainWindow))
+                    if ((window1 as MainWindow).oc_Show.Opacity == 0.5)
                     {
-                        (window as MainWindow).oc_Show.Opacity = 1;
+                        write_config_file(res_folder + "\\config\\config.json", "Translucent", false);
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window.GetType() == typeof(MainWindow))
+                            {
+                                (window as MainWindow).oc_Show.Opacity = 1;
+                            }
+                        }
                     }
-                }
-            }
-            else
-            {
-                write_config_file(res_folder + "\\config\\config.json", "Translucent", "Yes");
-                foreach (Window window in Application.Current.Windows)
-                {
-                    if (window.GetType() == typeof(MainWindow))
+                    else
                     {
-                        (window as MainWindow).oc_Show.Opacity = 0.5;
+                        write_config_file(res_folder + "\\config\\config.json", "Translucent", true);
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window.GetType() == typeof(MainWindow))
+                            {
+                                (window as MainWindow).oc_Show.Opacity = 0.5;
+                            }
+                        }
                     }
                 }
             }

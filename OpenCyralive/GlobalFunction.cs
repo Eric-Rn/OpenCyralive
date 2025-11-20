@@ -29,7 +29,7 @@ namespace OpenCyralive
         public static Markdown markdown = new Markdown();
         public static FontFamily fontFamily;
         public static double fontSize = 0;
-        public static void write_config_file(string file_path, string item, string value)
+        public static void write_config_file(string file_path, string item, dynamic value)
         {
             JsonNode modify_current_json = JsonNode.Parse(File.ReadAllText(file_path));
             modify_current_json[item] = value;
@@ -82,6 +82,12 @@ namespace OpenCyralive
         {
             JsonDocument getCyraliveConfig = JsonDocument.Parse(File.ReadAllText(file_path));
             return getCyraliveConfig.RootElement.GetProperty(item).ToString();
+        }
+
+        public static bool read_config_file_bool(string file_path, string item)
+        {
+            JsonDocument getCyraliveConfig = JsonDocument.Parse(File.ReadAllText(file_path));
+            return getCyraliveConfig.RootElement.GetProperty(item).GetBoolean();
         }
 
         public static void openThings(string file_path, string args)

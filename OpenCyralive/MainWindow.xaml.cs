@@ -296,22 +296,23 @@ namespace OpenCyralive
                     Height = Convert.ToDouble(get_size[0]);
                     Width = Convert.ToDouble(get_size[1]);
                 }
-                if (ocConfig["Topmost"].ToString() != "Yes")
+                if (!(bool)ocConfig["Topmost"])
                 {
                     Topmost = false;
                 }
-                if (ocConfig["TransparentWindow"].ToString() == "Yes")
+                if ((bool)ocConfig["TransparentWindow"])
                 {
                     Background = Brushes.Transparent;
-                }
-                if (ocConfig["Translucent"].ToString() == "Yes")
-                {
-                    oc_Show.Opacity = 0.5;
                 }
                 if (ocConfig["Taskbar"].ToString() == "Yes")
                 {
                     ShowInTaskbar = true;
                 }
+                if ((bool)ocConfig["Translucent"])
+                {
+                    oc_Show.Opacity = 0.5;
+                }
+                
                 if (ocConfig["Bubble_bg"].ToString() != "")
                 {
                     Cierra_hover_text_border.Background = (Brush)new BrushConverter().ConvertFromString(ocConfig["Bubble_bg"].ToString());
@@ -516,7 +517,7 @@ namespace OpenCyralive
 
         private void oc_Show_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            if (read_config_file(res_folder + "\\config\\config.json", "Translucent") == "Yes")
+            if (read_config_file_bool(res_folder + "\\config\\config.json", "Translucent"))
             {
                 oc_Show.Opacity = 0.5;
             }
@@ -548,7 +549,7 @@ namespace OpenCyralive
                         Cierra_hover_text.Markdown = get_message(res_folder + "\\lines\\" + oc_Show_character_name() + "\\" + character_status() + ".json");
                     }
                     get_msg_trigger();
-                    if (read_config_file(res_folder + "\\config\\config.json", "Translucent") == "Yes")
+                    if (read_config_file_bool(res_folder + "\\config\\config.json", "Translucent"))
                     {
                         oc_Show.Opacity = 1;
                     }
