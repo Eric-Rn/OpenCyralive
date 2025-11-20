@@ -4,6 +4,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Loader;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Forms;
@@ -29,7 +30,8 @@ namespace OpenCyralive
                 foreach (string folder_path in Directory.GetDirectories(res_folder + "\\plugins"))
                 {
                     pluginDirs.Add(folder_path);
-                    Assembly assembly = Assembly.LoadFile(Directory.GetCurrentDirectory() + "\\" + folder_path + "\\" + Path.GetFileName(folder_path) + ".dll");
+                    AssemblyLoadContext assemblyLoadContext = new ocassemblylc();
+                    Assembly assembly = assemblyLoadContext.LoadFromStream(new MemoryStream(File.ReadAllBytes(Directory.GetCurrentDirectory() + "\\" + folder_path + "\\" + Path.GetFileName(folder_path) + ".dll")));
                     foreach (Type type in assembly.GetExportedTypes())
                     {
                         if (type.Name == "plugin_base")
@@ -51,11 +53,9 @@ namespace OpenCyralive
                 if (dialogResult == System.Windows.Forms.DialogResult.OK)
                 {
                     notifyIcon.Dispose();
-                    openThings("explorer.exe", "/select," + Directory.GetCurrentDirectory() + "\\" + pluginDirs[oc_plugins.SelectedIndex]);
-                    foreach (Window window in Application.Current.Windows)
-                    {
-                        window.Close();
-                    }
+                    Application.Current.Shutdown();
+                    Directory.Delete(Directory.GetCurrentDirectory() + "\\" + pluginDirs[oc_plugins.SelectedIndex], true);
+                    openThings(Assembly.GetExecutingAssembly().GetName().Name + ".exe", "");
                 }
             }
         }
