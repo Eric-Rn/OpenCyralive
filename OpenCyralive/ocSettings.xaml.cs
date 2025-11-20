@@ -223,9 +223,9 @@ namespace OpenCyralive
                 {
                     Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + read_config_file(res_folder + "\\config\\config.json", "Character") + "\\appicon.ico";
                 }
-                else if (File.Exists(res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico"))
+                else if (File.Exists(res_folder + "\\images\\appicon\\" + Path.GetFileName(Directory.GetDirectories(res_folder + "\\characters").First()) + "\\appicon.ico"))
                 {
-                    Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico";
+                    Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + Path.GetFileName(Directory.GetDirectories(res_folder + "\\characters").First()) + "\\appicon.ico";
                 }
                 else
                 {
@@ -239,9 +239,9 @@ namespace OpenCyralive
                 {
                     Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + read_config_file(res_folder + "\\config\\config.json", "Character") + "\\appicon.ico";
                 }
-                else if (File.Exists(res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico"))
+                else if (File.Exists(res_folder + "\\images\\appicon\\" + Path.GetFileName(Directory.GetDirectories(res_folder + "\\characters").First()) + "\\appicon.ico"))
                 {
-                    Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico";
+                    Cierra_shortcut.IconLocation = Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + Path.GetFileName(Directory.GetDirectories(res_folder + "\\characters").First()) + "\\appicon.ico";
                 }
                 else
                 {

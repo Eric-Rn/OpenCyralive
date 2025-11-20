@@ -234,9 +234,9 @@ namespace OpenCyralive
                 {
                     notifyIcon.Icon = new Icon(res_folder + "\\images\\trayicon\\" + ocConfig["Character"].ToString() + "\\trayicon.ico");
                 }
-                else if (File.Exists(res_folder + "\\images\\trayicon\\" + strings.Last() + "\\trayicon.ico"))
+                else if (File.Exists(res_folder + "\\images\\trayicon\\" + Path.GetFileName(Directory.GetDirectories(res_folder + "\\characters").First()) + "\\trayicon.ico"))
                 {
-                    notifyIcon.Icon = new Icon(res_folder + "\\images\\trayicon\\" + strings.Last() + "\\trayicon.ico");
+                    notifyIcon.Icon = new Icon(res_folder + "\\images\\trayicon\\" + Path.GetFileName(Directory.GetDirectories(res_folder + "\\characters").First()) + "\\trayicon.ico");
                 }
                 else
                 {
@@ -246,9 +246,9 @@ namespace OpenCyralive
                 {
                     Icon = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + ocConfig["Character"].ToString() + "\\appicon.ico", UriKind.RelativeOrAbsolute));
                 }
-                else if (File.Exists(res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico"))
+                else if (File.Exists(res_folder + "\\images\\appicon\\" + Path.GetFileName(Directory.GetDirectories(res_folder + "\\characters").First()) + "\\appicon.ico"))
                 {
-                    Icon = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + strings.Last() + "\\appicon.ico", UriKind.RelativeOrAbsolute));
+                    Icon = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\" + res_folder + "\\images\\appicon\\" + Path.GetFileName(Directory.GetDirectories(res_folder + "\\characters").First()) + "\\appicon.ico", UriKind.RelativeOrAbsolute));
                 }
                 else
                 {
