@@ -143,7 +143,7 @@
     <Folder Include="resources\lines\艾米利亚 希耶拉 诺娃 %28航空航天%29\" />
     <Folder Include="resources\lines\谢拉 露妮丝\SpecialThanks\" />
     <Folder Include="resources\plugins\" />
-    <Folder Include="resources\specialplugins\" />
+    <Folder Include="resources\vendorplugins\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\lang\en-US.xaml">
