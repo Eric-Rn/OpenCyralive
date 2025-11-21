@@ -358,6 +358,17 @@ namespace OpenCyralive
 
                     }
                 }
+                if (ocConfig["Theme"].ToString() != "" && ocConfig["Theme"].ToString() != Application.Current.Resources.MergedDictionaries.FirstOrDefault(d => d.Source != null && d.Source.OriginalString.Contains("PresentationFramework")).Source.OriginalString)
+                {
+                    ResourceDictionary themeDictionary = Application.Current.Resources.MergedDictionaries.FirstOrDefault(d => d.Source != null && d.Source.OriginalString.Contains("PresentationFramework"));
+                    if (themeDictionary != null)
+                    {
+                        Application.Current.Resources.MergedDictionaries.Remove(themeDictionary);
+                    }
+                    ResourceDictionary newTheme = new ResourceDictionary();
+                    newTheme.Source = new Uri(themesuri[Array.IndexOf(themesuri, ocConfig["Theme"].ToString())], UriKind.RelativeOrAbsolute);
+                    Application.Current.Resources.MergedDictionaries.Add(newTheme);
+                }
                 if (File.Exists(res_folder + "\\config\\brand.txt"))
                 {
                     Title = File.ReadAllText(res_folder + "\\config\\brand.txt");

@@ -35,6 +35,7 @@ namespace OpenCyralive
         int selectedLang;
         Type[] moreinfoTypes;
         Type[] aboutTypes;
+        int selectedTheme;
         public ocSettings()
         {
             InitializeComponent();
@@ -155,6 +156,11 @@ namespace OpenCyralive
                     selectedLang = Array.IndexOf(langs, res_folder + "\\lang\\zh-CN.xaml");
                     oc_language.SelectedIndex = selectedLang;
                 }
+            }
+            if ((Application.Current.Resources.MergedDictionaries.FirstOrDefault(d => d.Source != null && d.Source.OriginalString.Contains("PresentationFramework")) != null))
+            {
+                selectedTheme = Array.IndexOf(themesuri, (Application.Current.Resources.MergedDictionaries.FirstOrDefault(d => d.Source != null && d.Source.OriginalString.Contains("PresentationFramework")).Source.OriginalString));
+                oc_theme.SelectedIndex = selectedTheme;
             }
             if (File.Exists(res_folder + "\\config\\brand.txt"))
             {
@@ -748,6 +754,23 @@ namespace OpenCyralive
                     fileStream1.Close();
                     selectedLang = oc_language.SelectedIndex;
                 }
+            }
+        }
+
+        private void oc_theme_DropDownClosed(object sender, EventArgs e)
+        {
+            if (oc_theme.SelectedIndex != selectedTheme)
+            {
+                ResourceDictionary themeDictionary = Application.Current.Resources.MergedDictionaries.FirstOrDefault(d => d.Source != null && d.Source.OriginalString.Contains("PresentationFramework"));
+                if (themeDictionary != null)
+                {
+                    Application.Current.Resources.MergedDictionaries.Remove(themeDictionary);
+                }
+                ResourceDictionary newTheme = new ResourceDictionary();
+                newTheme.Source = new Uri(themesuri[oc_theme.SelectedIndex], UriKind.RelativeOrAbsolute);
+                Application.Current.Resources.MergedDictionaries.Add(newTheme);
+                selectedTheme = oc_theme.SelectedIndex;
+                write_config_file(res_folder + "\\config\\config.json", "Theme", Application.Current.Resources.MergedDictionaries.FirstOrDefault(d => d.Source != null && d.Source.OriginalString.Contains("PresentationFramework")).Source.OriginalString);
             }
         }
     }

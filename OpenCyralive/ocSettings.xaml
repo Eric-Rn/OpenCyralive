@@ -23,6 +23,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                     <RowDefinition Height="3"/>
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="25"/>
@@ -45,41 +46,51 @@
                 <CheckBox x:Name="oc_transparent_window" Margin="5,0,0,0" Grid.Row="2" Grid.Column="0"  Content="{DynamicResource oc_transparent_window}" Click="oc_transparent_window_Click"/>
                 <CheckBox x:Name="oc_translucent" Margin="5,0,0,0" Grid.Row="2" Grid.Column="1" Content="{DynamicResource oc_translucent}" Click="oc_translucent_Click"/>
                 <CheckBox x:Name="oc_tb_show" Margin="5,0,0,0" Grid.Row="2" Grid.Column="2" Content="{DynamicResource oc_tb_show}" Click="oc_tb_show_Click"/>
-                <TextBlock Text="{DynamicResource txt_language}" Grid.Row="3" VerticalAlignment="Center"/>
-                <ComboBox x:Name="oc_language" Grid.Row="3" Grid.Column="1" DropDownClosed="oc_language_DropDownClosed" />
-                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="4" Grid.Column="0"/>
-                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="4" Grid.Column="1"/>
-                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="4" Grid.Column="2"/>
-                <TextBlock Text="{DynamicResource txt_bubble_bg}" Grid.Row="5" Grid.Column="0"/>
-                <Rectangle x:Name="oc_msg_bg" Grid.Row="5" Grid.Column="1" Margin="0,0,0,2" MouseDown="oc_msg_bg_MouseDown" Stroke="Gray"/>
-                <TextBlock Text="{DynamicResource txt_bubble_fg}" Grid.Row="6" Grid.Column="0"/>
-                <Rectangle x:Name="oc_msg_fg" Grid.Row="6" Grid.Column="1" Margin="0,0,0,2" MouseDown="oc_msg_fg_MouseDown" Stroke="Gray"/>
-                <TextBlock Text="{DynamicResource txt_bubble_brd}" Grid.Row="7" Grid.Column="0"/>
-                <Rectangle x:Name="oc_msg_brd" Grid.Row="7" Grid.Column="1" Margin="0,0,0,2" MouseDown="oc_msg_brd_MouseDown" Stroke="Gray"/>
-                <TextBlock Text="{DynamicResource txt_bubble_font}" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"/>
-                <ComboBox x:Name="oc_msg_font" Grid.Row="8" Grid.Column="1" DropDownClosed="oc_msg_font_DropDownClosed"/>
-                <CheckBox x:Name="oc_msg_font_bold" Grid.Row ="9" Grid.Column="1" Content="{DynamicResource oc_msg_font_bold}" Click="oc_msg_font_bold_Click" HorizontalAlignment="Stretch"/>
-                <CheckBox x:Name="oc_msg_font_italic" Grid.Row="9" Grid.Column="2" Content="{DynamicResource oc_msg_font_italic}" Click="oc_msg_font_italic_Click" HorizontalAlignment="Stretch" Cursor="Hand"/>
-                <TextBlock Text="{DynamicResource txt_bubble_font_size}" Grid.Row="10" Grid.Column="0" VerticalAlignment="Center"/>
-                <ComboBox x:Name="oc_msg_font_size" Grid.Row="10" Grid.Column="1" DropDownClosed="oc_msg_font_size_DropDownClosed"/>
-                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="11" Grid.Column="0"/>
-                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="11" Grid.Column="1"/>
-                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="11" Grid.Column="2"/>
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="{DynamicResource txt_hemi}" VerticalAlignment="Center"/>
-                <ComboBox Grid.Row="12" Grid.Column="1" x:Name="oc_hemi">
+                <TextBlock Grid.Row="3" Text="主题: " VerticalAlignment="Center"/>
+                <ComboBox x:Name="oc_theme" Grid.Row="3" Grid.Column="1" DropDownClosed="oc_theme_DropDownClosed">
+                    <ComboBoxItem Content="Fluent"/>
+                    <ComboBoxItem Content="Aero"/>
+                    <ComboBoxItem Content="Aero2"/>
+                    <ComboBoxItem Content="AeroLite"/>
+                    <ComboBoxItem Content="Classic"/>
+                    <ComboBoxItem Content="Luna"/>
+                    <ComboBoxItem Content="Royale"/>
+                </ComboBox>
+                <TextBlock Text="{DynamicResource txt_language}" Grid.Row="4" VerticalAlignment="Center"/>
+                <ComboBox x:Name="oc_language" Grid.Row="4" Grid.Column="1" DropDownClosed="oc_language_DropDownClosed" />
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="5" Grid.Column="0"/>
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="5" Grid.Column="1"/>
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="5" Grid.Column="2"/>
+                <TextBlock Text="{DynamicResource txt_bubble_bg}" Grid.Row="6" Grid.Column="0"/>
+                <Rectangle x:Name="oc_msg_bg" Grid.Row="6" Grid.Column="1" Margin="0,0,0,2" MouseDown="oc_msg_bg_MouseDown" Stroke="Gray"/>
+                <TextBlock Text="{DynamicResource txt_bubble_fg}" Grid.Row="7" Grid.Column="0"/>
+                <Rectangle x:Name="oc_msg_fg" Grid.Row="7" Grid.Column="1" Margin="0,0,0,2" MouseDown="oc_msg_fg_MouseDown" Stroke="Gray"/>
+                <TextBlock Text="{DynamicResource txt_bubble_brd}" Grid.Row="8" Grid.Column="0"/>
+                <Rectangle x:Name="oc_msg_brd" Grid.Row="8" Grid.Column="1" Margin="0,0,0,2" MouseDown="oc_msg_brd_MouseDown" Stroke="Gray"/>
+                <TextBlock Text="{DynamicResource txt_bubble_font}" Grid.Row="9" Grid.Column="0" VerticalAlignment="Center"/>
+                <ComboBox x:Name="oc_msg_font" Grid.Row="9" Grid.Column="1" DropDownClosed="oc_msg_font_DropDownClosed"/>
+                <CheckBox x:Name="oc_msg_font_bold" Grid.Row ="10" Grid.Column="1" Content="{DynamicResource oc_msg_font_bold}" Click="oc_msg_font_bold_Click" HorizontalAlignment="Stretch"/>
+                <CheckBox x:Name="oc_msg_font_italic" Grid.Row="10" Grid.Column="2" Content="{DynamicResource oc_msg_font_italic}" Click="oc_msg_font_italic_Click" HorizontalAlignment="Stretch" Cursor="Hand"/>
+                <TextBlock Text="{DynamicResource txt_bubble_font_size}" Grid.Row="11" Grid.Column="0" VerticalAlignment="Center"/>
+                <ComboBox x:Name="oc_msg_font_size" Grid.Row="11" Grid.Column="1" DropDownClosed="oc_msg_font_size_DropDownClosed"/>
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="12" Grid.Column="0"/>
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="12" Grid.Column="1"/>
+                <Rectangle Fill="Silver" Margin="0,2,0,0" Grid.Row="12" Grid.Column="2"/>
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{DynamicResource txt_hemi}" VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="13" Grid.Column="1" x:Name="oc_hemi">
                     <ComboBoxItem x:Name="oc_hemi_north" Content="{DynamicResource oc_hemi_north}" PreviewMouseUp="oc_hemi_north_PreviewMouseUp"/>
                     <ComboBoxItem x:Name="oc_hemi_south" Content="{DynamicResource oc_hemi_south}" PreviewMouseUp="oc_hemi_south_PreviewMouseUp"/>
                 </ComboBox>
-                <Button x:Name="oc_schedule" Grid.Row="13" Grid.Column="0" Content="{DynamicResource oc_schedule}" Click="oc_schedule_Click" HorizontalAlignment="Center"/>
-                <Button x:Name="oc_character_mgmt" Grid.Row="13" Grid.Column="1" Content="{DynamicResource oc_character_mgmt}" Click="oc_character_mgmt_Click" HorizontalAlignment="Center"/>
-                <Button x:Name="oc_plugin_mgmt" Grid.Row="13" Grid.Column="2" Content="{DynamicResource oc_plugin_mgmt}" Click="oc_plugin_mgmt_Click" HorizontalAlignment="Center"/>
-                <TextBlock Grid.Row="14" Grid.Column="1" Text="{DynamicResource txt_advanced_settings}" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <CheckBox x:Name="oc_desktop_shortcut" Grid.Row="15" Grid.Column="0" Content="{DynamicResource oc_desktop_shortcut}" Click="oc_desktop_shortcut_Click" HorizontalAlignment="Center" Cursor="Hand"/>
-                <CheckBox Grid.Row="15" Grid.Column="1" x:Name="oc_startmenu_shortcut" Content="{DynamicResource oc_startmenu_shortcut}" Click="oc_startmenu_shortcut_Click" HorizontalAlignment="Center"/>
-                <CheckBox x:Name="oc_autostart" Grid.Row="15" Grid.Column="2" Content="{DynamicResource oc_autostart}" Click="oc_autostart_Click" HorizontalAlignment="Center" Cursor="Hand"/>
-                <Button x:Name="oc_restart" Grid.Row="16" Grid.Column="0" Content="{DynamicResource oc_restart}" Click="oc_restart_Click" HorizontalAlignment="Center"/>
-                <Button x:Name="oc_config_file" Grid.Row="16" Grid.Column="1" Content="{DynamicResource oc_config_file}" Click="oc_config_file_Click" HorizontalAlignment="Center"/>
-                <Button x:Name="oc_reset_default" Grid.Row="16" Grid.Column="2" Content="{DynamicResource oc_reset_default}" Click="oc_reset_default_Click" HorizontalAlignment="Center" Visibility="Hidden"/>
+                <Button x:Name="oc_schedule" Grid.Row="14" Grid.Column="0" Content="{DynamicResource oc_schedule}" Click="oc_schedule_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_character_mgmt" Grid.Row="14" Grid.Column="1" Content="{DynamicResource oc_character_mgmt}" Click="oc_character_mgmt_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_plugin_mgmt" Grid.Row="14" Grid.Column="2" Content="{DynamicResource oc_plugin_mgmt}" Click="oc_plugin_mgmt_Click" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="15" Grid.Column="1" Text="{DynamicResource txt_advanced_settings}" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <CheckBox x:Name="oc_desktop_shortcut" Grid.Row="16" Grid.Column="0" Content="{DynamicResource oc_desktop_shortcut}" Click="oc_desktop_shortcut_Click" HorizontalAlignment="Center" Cursor="Hand"/>
+                <CheckBox Grid.Row="16" Grid.Column="1" x:Name="oc_startmenu_shortcut" Content="{DynamicResource oc_startmenu_shortcut}" Click="oc_startmenu_shortcut_Click" HorizontalAlignment="Center"/>
+                <CheckBox x:Name="oc_autostart" Grid.Row="16" Grid.Column="2" Content="{DynamicResource oc_autostart}" Click="oc_autostart_Click" HorizontalAlignment="Center" Cursor="Hand"/>
+                <Button x:Name="oc_restart" Grid.Row="17" Grid.Column="0" Content="{DynamicResource oc_restart}" Click="oc_restart_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_config_file" Grid.Row="17" Grid.Column="1" Content="{DynamicResource oc_config_file}" Click="oc_config_file_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="oc_reset_default" Grid.Row="17" Grid.Column="2" Content="{DynamicResource oc_reset_default}" Click="oc_reset_default_Click" HorizontalAlignment="Center" Visibility="Hidden"/>
                 <TextBlock Grid.Row="0" Grid.Column="5" Text="{DynamicResource txt_more_info}"/>
                 <Button x:Name="oc_about" Grid.Row="1" Grid.Column="5" Content="{DynamicResource about}" Click="oc_about_Click" HorizontalAlignment="Center" Visibility="Hidden"/>
                 <Button x:Name="os_license" Grid.Row="1" Grid.Column="6" Content="{DynamicResource oc_license}" Click="os_license_Click" HorizontalAlignment="Center"/>

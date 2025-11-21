@@ -29,6 +29,16 @@ namespace OpenCyralive
         public static Markdown markdown = new Markdown();
         public static FontFamily fontFamily;
         public static double fontSize = 0;
+        public static string[] themesuri =
+        {
+            "pack://application:,,,/PresentationFramework.Fluent;component/Themes/Fluent.xaml",
+            "pack://application:,,,/PresentationFramework.Aero;component/Themes/Aero.NormalColor.xaml",
+            "pack://application:,,,/PresentationFramework.Aero2;component/Themes/Aero2.NormalColor.xaml",
+            "pack://application:,,,/PresentationFramework.AeroLite;component/Themes/AeroLite.NormalColor.xaml",
+            "pack://application:,,,/PresentationFramework.Classic;component/Themes/Classic.xaml",
+            "pack://application:,,,/PresentationFramework.Luna;component/Themes/Luna.NormalColor.xaml",
+            "pack://application:,,,/PresentationFramework.Royale;component/Themes/Royale.NormalColor.xaml"
+        };
         public static void write_config_file(string file_path, string item, dynamic value)
         {
             JsonNode modify_current_json = JsonNode.Parse(File.ReadAllText(file_path));
