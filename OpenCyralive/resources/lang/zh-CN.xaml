@@ -69,4 +69,5 @@
     <s:String x:Key="del_chara_msg">删除成功，按确定重启桌宠。</s:String>
     <s:String x:Key="import_chara_cn">导入角色</s:String>
     <s:String x:Key="import_success_cn">导入成功，按确定重启桌宠。</s:String>
+    <s:String x:Key="oc_theme">主题: </s:String>
 </ResourceDictionary>

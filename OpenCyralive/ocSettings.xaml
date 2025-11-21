@@ -46,7 +46,7 @@
                 <CheckBox x:Name="oc_transparent_window" Margin="5,0,0,0" Grid.Row="2" Grid.Column="0"  Content="{DynamicResource oc_transparent_window}" Click="oc_transparent_window_Click"/>
                 <CheckBox x:Name="oc_translucent" Margin="5,0,0,0" Grid.Row="2" Grid.Column="1" Content="{DynamicResource oc_translucent}" Click="oc_translucent_Click"/>
                 <CheckBox x:Name="oc_tb_show" Margin="5,0,0,0" Grid.Row="2" Grid.Column="2" Content="{DynamicResource oc_tb_show}" Click="oc_tb_show_Click"/>
-                <TextBlock Grid.Row="3" Text="主题: " VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Text="{DynamicResource oc_theme}" VerticalAlignment="Center"/>
                 <ComboBox x:Name="oc_theme" Grid.Row="3" Grid.Column="1" DropDownClosed="oc_theme_DropDownClosed">
                     <ComboBoxItem Content="Fluent"/>
                     <ComboBoxItem Content="Aero"/>
