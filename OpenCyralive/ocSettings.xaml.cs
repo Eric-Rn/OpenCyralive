@@ -101,11 +101,11 @@ namespace OpenCyralive
                     }
                 }
             }
-            if (ocConfig["Bubble_font_Bold"].ToString() != "")
+            if ((bool)ocConfig["Bubble_font_Bold"])
             {
                 oc_msg_font_bold.IsChecked = true;
             }
-            if (ocConfig["Bubble_font_Italic"].ToString() != "")
+            if ((bool)ocConfig["Bubble_font_Italic"])
             {
                 oc_msg_font_italic.IsChecked = true;
             }
@@ -469,9 +469,9 @@ namespace OpenCyralive
 
         private void oc_msg_font_bold_Click(object sender, RoutedEventArgs e)
         {
-            if (read_config_file(res_folder + "\\config\\config.json", "Bubble_font_Bold") != "")
+            if (read_config_file_bool(res_folder + "\\config\\config.json", "Bubble_font_Bold"))
             {
-                write_config_file(res_folder + "\\config\\config.json", "Bubble_font_Bold", "");
+                write_config_file(res_folder + "\\config\\config.json", "Bubble_font_Bold", false);
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(MainWindow))
@@ -483,7 +483,7 @@ namespace OpenCyralive
             }
             else
             {
-                write_config_file(res_folder + "\\config\\config.json", "Bubble_font_Bold", "Yes");
+                write_config_file(res_folder + "\\config\\config.json", "Bubble_font_Bold", true);
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(MainWindow))
@@ -497,9 +497,9 @@ namespace OpenCyralive
 
         private void oc_msg_font_italic_Click(object sender, RoutedEventArgs e)
         {
-            if (read_config_file(res_folder + "\\config\\config.json", "Bubble_font_Italic") != "")
+            if (read_config_file_bool(res_folder + "\\config\\config.json", "Bubble_font_Italic"))
             {
-                write_config_file(res_folder + "\\config\\config.json", "Bubble_font_Italic", "");
+                write_config_file(res_folder + "\\config\\config.json", "Bubble_font_Italic", false);
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(MainWindow))
@@ -511,7 +511,7 @@ namespace OpenCyralive
             }
             else
             {
-                write_config_file("resources/config/config.json", "Bubble_font_Italic", "Yes");
+                write_config_file("resources/config/config.json", "Bubble_font_Italic", true);
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(MainWindow))

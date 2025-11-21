@@ -326,11 +326,11 @@ namespace OpenCyralive
                 {
                     Cierra_hover_text_border.BorderBrush = (Brush)new BrushConverter().ConvertFromString(ocConfig["Bubble_brd"].ToString());
                 }
-                if (ocConfig["Bubble_font_Bold"].ToString() != "")
+                if ((bool)ocConfig["Bubble_font_Bold"])
                 {
                     Cierra_hover_text.FontWeight = FontWeights.Bold;
                 }
-                if (ocConfig["Bubble_font_Italic"].ToString() != "")
+                if ((bool)ocConfig["Bubble_font_Italic"])
                 {
                     Cierra_hover_text.FontStyle = FontStyles.Italic;
                 }

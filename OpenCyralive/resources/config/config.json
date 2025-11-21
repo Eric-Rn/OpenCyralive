@@ -10,8 +10,8 @@
   "Bubble_fg": "",
   "Bubble_brd": "",
   "Bubble_font": "",
-  "Bubble_font_Bold": "",
-  "Bubble_font_Italic": "",
+  "Bubble_font_Bold": false,
+  "Bubble_font_Italic": false,
   "Bubble_font_size": "",
   "Hemi": "",
   "Culture":  ""
