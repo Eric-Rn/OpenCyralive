@@ -29,10 +29,12 @@ namespace OpenCyralive
                     if (AnimationBehavior.GetSourceUri((window as MainWindow).oc_Show) == null)
                     {
                         cur_chara.Text = cur_chara.Text + Path.GetFileName(Path.GetDirectoryName(new Uri((window as MainWindow).oc_Show.Source.ToString()).LocalPath));
+                        cur_chara_name = Path.GetFileName(Path.GetDirectoryName(new Uri((window as MainWindow).oc_Show.Source.ToString()).LocalPath));
                     }
                     else
                     {
                         cur_chara.Text = cur_chara.Text + Path.GetFileName(Path.GetDirectoryName(new Uri(AnimationBehavior.GetSourceUri((window as MainWindow).oc_Show).ToString()).LocalPath));
+                        cur_chara_name = Path.GetFileName(Path.GetDirectoryName(new Uri(AnimationBehavior.GetSourceUri((window as MainWindow).oc_Show).ToString()).LocalPath));
                     }
                 }
             }
