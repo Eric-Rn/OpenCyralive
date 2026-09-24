@@ -7,7 +7,7 @@
     <UseWindowsForms>True</UseWindowsForms>
     <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
     <Authors>Eric Ren, BSU Solutions</Authors>
-    <Version>5.9</Version>
+    <Version>6.0</Version>
 	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -161,10 +161,13 @@
   <ItemGroup>
     <PackageReference Include="MdXaml" Version="1.27.0" />
     <PackageReference Include="Mime" Version="3.8.0" />
-    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="10.0.10" />
+    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="10.0.12" />
     <PackageReference Include="XamlAnimatedGif" Version="2.3.2" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="resources\characters\Borodinskaya Borodino Borodinsky\normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="resources\characters\Clauvio休闲装\CopyrightInfo\Copyright.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -229,6 +232,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="resources\license\XamlAnimatedGif.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\lines\Borodinskaya Borodino Borodinsky\normal.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="resources\lines\Clauvio休闲装\normal.json">
